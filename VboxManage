@@ -1,0 +1,90 @@
+Créer une VM VirtualBox en ligne de commandes avec VboxManage
+5 octobre 2020 machine virtuelle
+
+Dernière modification : 4 octobre 2020
+Cette entrée fait partie d'une série de 6 sur 20 dans la série VirtualBox : créer et utiliser une machine virtuelle
+
+Oracle VM Virtualbox propose tous les outils pour créer une VM en ligne de commandes avec VBoxManage.
+On peut aussi installer l’OS de son choix à partir d’un fichier ISO.
+
+Dans cet article, vous allez voir toutes les commandes et syntaxes pour réussir à créer votre VM VirtualBox.
+Cela permet d’automatiser la création à partir d’un script batch ou bash.
+Créer une VM VirtualBox en ligne de commandes avec VboxManage
+
+Table des matières :
+1 Créer une VM VirtualBox en ligne de commandes avec VboxManage
+	1.1 Ajouter une nouvelle VM
+	1.2 Configurer la quantité de mémoire de la VM
+	1.3 Créer la configuration réseau
+	1.4 Créer le disque virtuel
+	1.5 Créer le lecteur DVD et attacher un fichier ISO
+	1.6 Installer l’OS dans la VM
+2 Liens
+
+1	Créer une VM VirtualBox en ligne de commandes avec VboxManage :
+	Je rappelle qu’il existe un tutoriel qui vous guide pour créer une VM avec les outils graphiques de VirtualBox :
+
+	Avec la commande VBoxManage les états sont les mêmes :
+	enregistrement de la nouvelle VM, création du disque virtuel, configuration de la quantité de mémoire, installation de l’OS, etc.
+
+1.1	Ajouter une nouvelle VM :
+	Dans un premier temps, on ajoute la nouvelle VM avec la sous-commande createvm.
+	Il faut spécifier le type d’OS et le chemin des fichiers de configuration de la VM sur le disque dur de la machine hôte.
+
+	VBoxManage createvm --name <Nom de la VM> --ostype <OSType> --register --basefolder <chemin de la VM>
+
+	Par exemple pour créer une VM Debian :
+	VBoxManage createvm --name "Debian64" --ostype "Debian_64" --register --basefolder "F:\Virtual Machines\virtualbox\Debian64"
+
+	Pour obtenir la liste des OS supporté par VirtualBox :
+	VBoxManage list ostypes
+
+1.2	Configurer la quantité de mémoire de la VM :
+	Puis on peut indiquer la quantité de mémoire RAM à utiliser ainsi que mémoire vidéo (vram).
+	Éventuellement, on peut activer ioapic.
+
+	VBoxManage modifyvm Debian64 --memory 2048 --vram 128
+	VBoxManage modifyvm Debian64 --ioapic on
+
+1.3	Créer la configuration réseau :
+	Pour configurer la VM avec un réseau NAT :
+		VBoxManage modifyvm Debian64 --nic1 nat
+
+	En bridge, ce sera plutôt :
+		VBoxManage modifyvm Debian64 --bridgeadapter1 vmnet1
+		VBoxManage modifyvm Debian64 --nic1 bridged
+
+1.4	Créer le disque virtuel :
+	Ensuite il faut créer le disque virtuel.
+
+	On utilise la sous-commande createhd afin de créer le disque virtuel.
+	Puis on créé le Controlleur Sata à la VM avec storagectl.
+	Enfin on attache le disque virtuel à ce dernier avec storageattach.
+
+	VBoxManage createhd --filename F:\Virtual Machines\virtualbox\Debian64\Debian64_DISK.vdi --size 80000 --format VDI                     
+	VBoxManage storagectl "Debian64" --name "SATA Controller" --add sata --controller IntelAhci       
+	VBoxManage storageattach "Debian64" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium  F:\Virtual Machines\virtualbox\Debian64\Debian64_DISK.vdi
+
+1.5	Créer le lecteur DVD et attacher un fichier ISO :
+	Éventuellement on peut aussi ajouter un lecteur IDE qui fera office de lecteur DVD-Rom.
+	A ce dernier, on peut attacher un fichier ISO.
+
+	VBoxManage storagectl "Debian64" --name "IDE Controller" --add ide --controller PIIX4       
+	VBoxManage storageattach "Debian64" --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium F:\ISO\debian.iso    
+	VBoxManage modifyvm "Debian64" --boot1 dvd --boot2 disk --boot3 none --boot4 none 
+
+1.6	Installer l’OS dans la VM :
+	Enfin pour installer l’OS automatiquement dans la VM en ligne de commandes, on utilise la commande unattended.
+
+	Ci-dessous, on installe Debian depuis l’ISO debian.iso dans la VM Debian64.
+	On peut spécifier le nom d’utilisateur (mak) et son mot de passe (supermotdepasse).
+
+	VBoxManage unattended install "Debian64" --iso F:\ISO\debian.iso  --user=mak --full-user-name="Malekal_morte" --password supermotdepasse --install-additions --time-zone=UTC
+
+	Mais aussi le même principe pour installer Windows 10 dans une VM Windows-10.
+	Il est aussi possible d’indiquer la clé produit de Windows.
+
+	VBoxManage unattended install "Windows-10" --iso F:\ISO\Win10_2004_French_x64.iso --user=MaK --full-user-name="Malekal_morte" --password supermotdepasse --key "XXXX-XXXX-XXXX-XXXX" --install-additions --time-zone=UTC
+
+2	Liens
+	https://www.malekal.com/comment-executer-une-vm-virtualbox-en-ligne-de-commande/

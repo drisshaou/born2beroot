@@ -1,0 +1,80 @@
+    1  apt install sudo
+    2  nano /etc/ssh/sshd_config
+    3  lsblk
+    4  poweroff
+    5  apt -y install libpam-pwquality
+    6  apt -y install ufw
+    7  ufw
+    8  ufw status
+    9  ufw allow 4242
+   10  ufw allow 80
+   11  ufw allow 443
+   12  ufw status
+   13  ufw start
+   14  ufw status
+   15  sysemctl ufw start
+   16  sysemctl start ufw
+   17  systemctl start ufw
+   18  ufw status
+   19  systemctl stayus ufw
+   20  systemctl status ufw
+   21  ufw status
+   22  ufw status
+   23  ufw enable
+   24  ufw status
+   25  systemctl enable ufw
+   26  hostname
+   27  hostname -f
+   28  hostnamectl
+   29  nano /etc/login.defs
+   30  nano -l /etc/login.defs
+   31  nano -l /etc/security/pwquality.conf
+   32  history
+   33  id drhaouha
+   34  nano /etc/ssh/sshd_config
+   35  /etc/init.d/sshd restart
+   36  systemctl restart sshd
+   37  nano /etc/ssh/sshd_config
+   38  groups
+   39  systemctl status ufw
+   40  ufw status
+   41  Xorg version
+   42  Xorg -version
+   43  groups
+   44  id -nG
+   45  exit
+   46  apt install sudo
+   47  groupadd user42
+   48  groups
+   49  exit
+   50  usermod -aG sudo drhaouha
+   51  exit
+   52  usermod -aG user42 drhaouha
+   53  exit
+   54  visudo
+   55  exit
+   56  cat /etc/sudoers
+   57  add drhaouha sudo
+   58  adduser drhaouha sudo
+   59  exit
+   60  poweroff
+   61  history
+   62  id -nG drhaouha
+   63  groups drhaouha
+   64  isudo
+   65  visudo
+   66  visudo
+   67  visudo
+   68  ls /etc/sudoers.d
+   69  ls /var/log/sudo
+   70  nano /etc/pam.d/system-auth
+   71  exit
+   72  nano /etc/pam.d/common-password
+   73  nano -l /etc/pam.d/common-password
+   74  exit
+   75  ls
+   76  pwd
+   77  cd /home/
+   78  ls
+   79  cd drhaouha/
+   80  ls
