@@ -1,0 +1,233 @@
+    1  pwd
+    2  history
+    3  exit
+    4  apt install sudo
+    5  apt install ufw
+    6  nano /etc/ssh/sshd_config
+    7  systemctl start ufw
+    8  systemctl status ufw
+    9  systemctl enable ufw
+   10  ufw allow 80
+   11  ufw allow 443
+   12  ufw allow 4242
+   13  ufw status
+   14  ufw start
+   15  ufw status
+   16  systemctl start ufw
+   17  ufw status
+   18  ufw start
+   19  ufw enable
+   20  ufw status
+   21  ssh -version
+   22  ssh --version
+   23  ssh -v
+   24  ssh -V
+   25  systemctl restart sshd
+   26  history
+   27  apt -y install libpam-pwquality
+   28  history
+   29  poweroff
+   30  lsblk
+   31  cat /etc/fstab
+   32  cat /etc/fstab | grep -Pq '/dev/(mapper/|disk/by-id/dm)'
+   33  cat /etc/fstab | grep '/dev/mapper'
+   34  who
+   35  who
+   36  who
+   37  apt install curl
+   38  ip link
+   39  ufw status numbered
+   40  lscpu
+   41  lscpu | grep "Processeur(s)"
+   42  lscpu | grep "Socket(s)"
+   43  poweroff
+   44  wall -n "Hello"
+   45  if [[ $(cat /etc/fstab | grep '/dev/mapper' | wc -l) -gt 0 ]]; then echo "yes"; else echo "no"; fi
+   46  nano /etc/pam.d/common-password
+   47  /etc/login.defs
+   48  nano /etc/login.defs
+   49  groups
+   50  groups drhaouha
+   51  groupadd user42
+   52  getent group
+   53  cut -d: -f1 /etc/passwd
+   54  usermod -aG user42 drhaouha
+   55  groups
+   56  chage -l drhaouha
+   57  poweroff
+   58  chage -l drhaouha
+   59  nano /etc
+   60  nano /etc/login.defs
+   61  nano /etc/security/pwquality.conf
+   62  chage -l drhaouha
+   63  chage -l drhaouha
+   64  useradd testuser
+   65  passwd testuser
+   66  chage -l testuser
+   67  chage -l drhaouha
+   68  userdel testuser 
+   69  userdel drahouha
+   70  userdel drhaouha
+   71  id -u drhaouha
+   72  passwd drhaouha
+   73  chage -l drhaouha
+   74  passwd drhaouha
+   75  passwd drhaouha
+   76  cd /var/log
+   77  touch sudo.log
+   78  ls
+   79  nano /etc/sudoers
+   80  clear
+   81  visudo
+   82  clear
+   83  exit
+   84  poweroff
+   85  visudo
+   86  visudo
+   87  cd /var/log
+   88  ls
+   89  rm sudo.log 
+   90  mkdir sudo
+   91  touch /var/log/sudo/sudo.log
+   92  apt-get install -y net-tools
+   93  cd /usr/local/bin/
+   94  touch monitoring.sh
+   95  chmod 777 monitoring.sh
+   96  nano monitoring.sh
+   97  visudo 
+   98  crontab -e
+   99  crontab -u root -e
+  100  nano monitoring.sh 
+  101  sh monitoring.sh 
+  102  apt install sysstat
+  103  sh monitoring.sh 
+  104  nano monitoring.sh 
+  105  netstat -v
+  106  nano monitoring.sh 
+  107  nano -l monitoring.sh 
+  108  sh monitoring.sh 
+  109  nano -l monitoring.sh 
+  110  sh monitoring.sh 
+  111  nano -l monitoring.sh 
+  112  nano -l monitoring.sh 
+  113  sh monitoring.sh 
+  114  nano -l monitoring.sh 
+  115  nano -l monitoring.sh 
+  116  sh monitoring.sh 
+  117  nano -l monitoring.sh 
+  118  sh monitoring.sh 
+  119  nano -l monitoring.sh 
+  120  sh monitoring.sh 
+  121  nano -l monitoring.sh 
+  122  sh monitoring.sh 
+  123  nano -l monitoring.sh 
+  124  sh monitoring.sh 
+  125  nano -l monitoring.sh 
+  126  sh monitoring.sh 
+  127  nano -l monitoring.sh 
+  128  nano -l monitoring.sh 
+  129  sh monitoring.sh 
+  130  nano -l monitoring.sh 
+  131  sh monitoring.sh 
+  132  nano -l monitoring.sh 
+  133  sh monitoring.sh 
+  134  nano -l monitoring.sh 
+  135  nano -l monitoring.sh 
+  136  sh monitoring.sh 
+  137  nano -l monitoring.sh 
+  138  sh monitoring.sh 
+  139  nano -l monitoring.sh 
+  140  sh monitoring.sh 
+  141  nano -l monitoring.sh 
+  142  sh monitoring.sh
+  143  nano -l monitoring.sh 
+  144  nano -l monitoring.sh 
+  145  journalctl _COMM=sudo | grep COMMAND | wc -l
+  146  journalctl _COMM=sudo
+  147  usermod -aG sudo drhaouha
+  148  usermod -aG user42 drhaouha
+  149  pam-auth-update
+  150  chage -l drhaouha
+  151  cat /etc/pam.d/passwd
+  152  cat /etc/pam.d/login
+  153  cat /etc/pam.d/system-auth
+  154  man chage
+  155  nano /etc/login.defs
+  156  nano /etc/pam.d/common-password
+  157  pam-auth-update
+  158  chage -l drhaouha
+  159  chage -l root
+  160  pwd
+  161  ls /home/drhaouha/
+  162  ls
+  163  cp /etc/pam.d/common-password ./common.password
+  164  ls
+  165  cp /etc/login.defs ./login.defs
+  166  exit
+  167  cp /home/drhaouha/login.defs /etc/login.defs
+  168  cd /home/drhaouha/
+  169  ls
+  170  cd ..
+  171  ls
+  172  cd lost+found/
+  173  ls
+  174  cd ..
+  175  cd /root/
+  176  ls
+  177  cp ,/login.defs /etc/login.defs
+  178  ls /etc
+  179  cp ./login.defs /etc/login.defs
+  180  cp ./commom-password /etc/pam.d/common-password
+  181  ls
+  182  cp ./commom.password /etc/pam.d/common-password
+  183  ls
+  184  ls /etc/pam.d
+  185  cp commom.password /etc/pam.d/common-password
+  186  ls
+  187  cp common.password /etc/pam.d/common-password
+  188  reboot
+  189  usermod -l drhaouha2 drhaouha
+  190  ls /usr/local/bin
+  191  nano /usr/local/bin/monitoring.sh 
+  192  sh /usr/local/bin/monitoring.sh 
+  193  nano /usr/local/bin/monitoring.sh 
+  194  sh /usr/local/bin/monitoring.sh 
+  195  nano /usr/local/bin/monitoring.sh 
+  196  sh /usr/local/bin/monitoring.sh 
+  197  cat /var/log/sudo/sudo.log
+  198  cat /var/log/sudo/sudo.log
+  199  clear
+  200  cat /var/log/sudo/sudo.log
+  201  exit
+  202  apt update
+  203  chage -l root
+  204  chage -M 30 root
+  205  chage -l root
+  206  chage -m 2 root
+  207  chage -l root
+  208  chage -l root
+  209  passwd root
+  210  passwd root
+  211  passwd root
+  212  passwd root
+  213  passwd root
+  214  chage -l root
+  215  chage -l root
+  216  chage -l root
+  217  reboot
+  218  nano /usr/local/bin/monitoring.sh 
+  219  nano /etc/login.defs
+  220  nano /etc/login.defs
+  221  nano /etc/sudoers
+  222  nano /etc/ssh/sshd_conf
+  223  nano /etc/ssh/sshd_config
+  224  nano /etc/security/pwquality.conf
+  225  ls /etc/
+  226  ls /etc/crontab
+  227  cat /etc/crontab
+  228  ls /etc/cron.d
+  229  cat /var/spool/cron/crontabs
+  230  ls /var/spool/cron/crontabs
+  231  ls /var/spool/cron/crontabs/root
+  232  cat /var/spool/cron/crontabs/root
+  233  lsblk
