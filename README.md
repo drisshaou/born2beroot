@@ -41,3 +41,6 @@ https://www.guyrutenberg.com/2010/12/03/wordpress-administration-over-ssl-on-lig
 
 Install PhpMyAdmin for MariaDB
 https://www.tecmint.com/install-lighttpd-in-ubuntu/
+
+How to create partition and partition LVM and crypt
+https://techencyclopedia.wordpress.com/2018/03/11/how-to-install-debian-8-by-manually-creating-lvm-linux-partitions/
