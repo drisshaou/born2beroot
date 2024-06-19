@@ -52,3 +52,5 @@ https://techencyclopedia.wordpress.com/2018/03/11/how-to-install-debian-8-by-man
 also for encrypted partition
 https://papy-tux.legtux.org/doc1174/index.html
 
+Relocate /boot in sdX
+https://aaronlauterer.com/blog/2021/move-grub-and-boot-to-other-disk/
