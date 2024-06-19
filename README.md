@@ -33,14 +33,22 @@ Usefull links:
 
 Wordpress install with lighttpd:
 https://www.atlantic.net/dedicated-server-hosting/how-to-install-wordpress-with-lighttpd-web-server-on-ubuntu-20-04/
+
 also
 https://www.linkedin.com/pulse/setting-up-wordpress-our-lighttpd-web-server-execution-ionica
+
 
 Settiong up ssl local certificate for https:
 https://www.guyrutenberg.com/2010/12/03/wordpress-administration-over-ssl-on-lighttpd/
 
+
 Install PhpMyAdmin for MariaDB
 https://www.tecmint.com/install-lighttpd-in-ubuntu/
 
+
 How to create partition and partition LVM and crypt
 https://techencyclopedia.wordpress.com/2018/03/11/how-to-install-debian-8-by-manually-creating-lvm-linux-partitions/
+
+also for encrypted partition
+https://papy-tux.legtux.org/doc1174/index.html
+
